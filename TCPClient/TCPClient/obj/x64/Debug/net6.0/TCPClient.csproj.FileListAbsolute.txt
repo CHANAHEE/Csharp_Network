@@ -1,0 +1,15 @@
+D:\NetworkProgramming\TCPClient\TCPClient\bin\x64\Debug\net6.0\TCPClient.exe
+D:\NetworkProgramming\TCPClient\TCPClient\bin\x64\Debug\net6.0\TCPClient.deps.json
+D:\NetworkProgramming\TCPClient\TCPClient\bin\x64\Debug\net6.0\TCPClient.runtimeconfig.json
+D:\NetworkProgramming\TCPClient\TCPClient\bin\x64\Debug\net6.0\TCPClient.dll
+D:\NetworkProgramming\TCPClient\TCPClient\bin\x64\Debug\net6.0\TCPClient.pdb
+D:\NetworkProgramming\TCPClient\TCPClient\obj\x64\Debug\net6.0\TCPClient.csproj.AssemblyReference.cache
+D:\NetworkProgramming\TCPClient\TCPClient\obj\x64\Debug\net6.0\TCPClient.GeneratedMSBuildEditorConfig.editorconfig
+D:\NetworkProgramming\TCPClient\TCPClient\obj\x64\Debug\net6.0\TCPClient.AssemblyInfoInputs.cache
+D:\NetworkProgramming\TCPClient\TCPClient\obj\x64\Debug\net6.0\TCPClient.AssemblyInfo.cs
+D:\NetworkProgramming\TCPClient\TCPClient\obj\x64\Debug\net6.0\TCPClient.csproj.CoreCompileInputs.cache
+D:\NetworkProgramming\TCPClient\TCPClient\obj\x64\Debug\net6.0\TCPClient.dll
+D:\NetworkProgramming\TCPClient\TCPClient\obj\x64\Debug\net6.0\refint\TCPClient.dll
+D:\NetworkProgramming\TCPClient\TCPClient\obj\x64\Debug\net6.0\TCPClient.pdb
+D:\NetworkProgramming\TCPClient\TCPClient\obj\x64\Debug\net6.0\TCPClient.genruntimeconfig.cache
+D:\NetworkProgramming\TCPClient\TCPClient\obj\x64\Debug\net6.0\ref\TCPClient.dll
