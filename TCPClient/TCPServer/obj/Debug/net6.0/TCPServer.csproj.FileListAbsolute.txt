@@ -1,0 +1,15 @@
+D:\NetworkProgramming\TCPClient\TCPServer\bin\Debug\net6.0\TCPServer.exe
+D:\NetworkProgramming\TCPClient\TCPServer\bin\Debug\net6.0\TCPServer.deps.json
+D:\NetworkProgramming\TCPClient\TCPServer\bin\Debug\net6.0\TCPServer.runtimeconfig.json
+D:\NetworkProgramming\TCPClient\TCPServer\bin\Debug\net6.0\TCPServer.dll
+D:\NetworkProgramming\TCPClient\TCPServer\bin\Debug\net6.0\TCPServer.pdb
+D:\NetworkProgramming\TCPClient\TCPServer\obj\Debug\net6.0\TCPServer.csproj.AssemblyReference.cache
+D:\NetworkProgramming\TCPClient\TCPServer\obj\Debug\net6.0\TCPServer.GeneratedMSBuildEditorConfig.editorconfig
+D:\NetworkProgramming\TCPClient\TCPServer\obj\Debug\net6.0\TCPServer.AssemblyInfoInputs.cache
+D:\NetworkProgramming\TCPClient\TCPServer\obj\Debug\net6.0\TCPServer.AssemblyInfo.cs
+D:\NetworkProgramming\TCPClient\TCPServer\obj\Debug\net6.0\TCPServer.csproj.CoreCompileInputs.cache
+D:\NetworkProgramming\TCPClient\TCPServer\obj\Debug\net6.0\TCPServer.dll
+D:\NetworkProgramming\TCPClient\TCPServer\obj\Debug\net6.0\refint\TCPServer.dll
+D:\NetworkProgramming\TCPClient\TCPServer\obj\Debug\net6.0\TCPServer.pdb
+D:\NetworkProgramming\TCPClient\TCPServer\obj\Debug\net6.0\TCPServer.genruntimeconfig.cache
+D:\NetworkProgramming\TCPClient\TCPServer\obj\Debug\net6.0\ref\TCPServer.dll
