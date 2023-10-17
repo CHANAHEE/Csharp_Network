@@ -50,24 +50,35 @@ namespace TCPClient
 
         public void SendDataToServer()
         {
-            Console.WriteLine("서버로 데이터 보내는 중 . . .");
+            NetworkStream Stream = null;
 
-            string Msg = "Hello World";
-            byte[] Buff = Encoding.ASCII.GetBytes(Msg);
-            int Nbytes = 0;
-
-            NetworkStream Stream = Client.GetStream();
-
-            // 서버로 보내는 데이터
-            Stream.Write(Buff, 0, Buff.Length);
-
-            // 서버로 부터 받을 데이터 준비
-            byte[] Outbuf = new byte[1024];
-
-            while ((Nbytes = Stream.Read(Outbuf, 0, Outbuf.Length)) > 0)
+            while (true)
             {
-                string receivedData = Encoding.ASCII.GetString(Buff, 0, Nbytes);
-                Console.WriteLine("서버로부터 받은 데이터 : " + receivedData);
+                Console.Write("메시지를 입력하세요( q는 종료 ) : ");
+
+                string? Msg = "";
+
+                if(Msg == "q")
+                {
+                    break;
+                }
+
+                while (true)
+                {
+                    Msg = Console.ReadLine();
+                    if (Msg != null)
+                    {
+                        break;
+                    }
+                    Console.WriteLine("메시지를 입력해주세요.");
+                }
+
+                byte[] Buff = Encoding.Unicode.GetBytes(Msg);
+
+                Stream = Client.GetStream();
+
+                // 서버로 보내는 데이터
+                Stream.Write(Buff, 0, Buff.Length);
             }
 
             Stream.Close();

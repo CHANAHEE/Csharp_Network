@@ -32,9 +32,9 @@ namespace TcpSrv
 
                 while ((Nbytes = Stream.Read(Buff, 0, Buff.Length)) > 0)
                 {
-                    ReceiveData = Encoding.ASCII.GetString(Buff,0,Nbytes);
+                    ReceiveData = Encoding.Unicode.GetString(Buff,0,Nbytes);
                     Console.WriteLine("데이터 받는중 : " + ReceiveData + "   남은 데이터 개수 : " + Nbytes);
-                    Stream.Write(Buff, 0, Nbytes);
+                    //Stream.Write(Buff, 0, Nbytes);
                 }
 
                 Console.WriteLine("받아온 데이터 : " + ReceiveData);
