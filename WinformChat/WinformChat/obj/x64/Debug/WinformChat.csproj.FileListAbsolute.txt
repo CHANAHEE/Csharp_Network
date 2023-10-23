@@ -1,0 +1,11 @@
+D:\NetworkProgramming\WinformChat\WinformChat\bin\x64\Debug\WinformChat.exe.config
+D:\NetworkProgramming\WinformChat\WinformChat\bin\x64\Debug\WinformChat.exe
+D:\NetworkProgramming\WinformChat\WinformChat\bin\x64\Debug\WinformChat.pdb
+D:\NetworkProgramming\WinformChat\WinformChat\obj\x64\Debug\WinformChat.csproj.AssemblyReference.cache
+D:\NetworkProgramming\WinformChat\WinformChat\obj\x64\Debug\WinformChat.csproj.SuggestedBindingRedirects.cache
+D:\NetworkProgramming\WinformChat\WinformChat\obj\x64\Debug\WinformChat.ChatForm.resources
+D:\NetworkProgramming\WinformChat\WinformChat\obj\x64\Debug\WinformChat.Properties.Resources.resources
+D:\NetworkProgramming\WinformChat\WinformChat\obj\x64\Debug\WinformChat.csproj.GenerateResource.cache
+D:\NetworkProgramming\WinformChat\WinformChat\obj\x64\Debug\WinformChat.csproj.CoreCompileInputs.cache
+D:\NetworkProgramming\WinformChat\WinformChat\obj\x64\Debug\WinformChat.exe
+D:\NetworkProgramming\WinformChat\WinformChat\obj\x64\Debug\WinformChat.pdb

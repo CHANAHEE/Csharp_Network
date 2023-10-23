@@ -1,0 +1,15 @@
+D:\NetworkProgramming\WinformChat\ServerProgram\bin\Debug\net6.0\ServerProgram.exe
+D:\NetworkProgramming\WinformChat\ServerProgram\bin\Debug\net6.0\ServerProgram.deps.json
+D:\NetworkProgramming\WinformChat\ServerProgram\bin\Debug\net6.0\ServerProgram.runtimeconfig.json
+D:\NetworkProgramming\WinformChat\ServerProgram\bin\Debug\net6.0\ServerProgram.dll
+D:\NetworkProgramming\WinformChat\ServerProgram\bin\Debug\net6.0\ServerProgram.pdb
+D:\NetworkProgramming\WinformChat\ServerProgram\obj\Debug\net6.0\ServerProgram.csproj.AssemblyReference.cache
+D:\NetworkProgramming\WinformChat\ServerProgram\obj\Debug\net6.0\ServerProgram.GeneratedMSBuildEditorConfig.editorconfig
+D:\NetworkProgramming\WinformChat\ServerProgram\obj\Debug\net6.0\ServerProgram.AssemblyInfoInputs.cache
+D:\NetworkProgramming\WinformChat\ServerProgram\obj\Debug\net6.0\ServerProgram.AssemblyInfo.cs
+D:\NetworkProgramming\WinformChat\ServerProgram\obj\Debug\net6.0\ServerProgram.csproj.CoreCompileInputs.cache
+D:\NetworkProgramming\WinformChat\ServerProgram\obj\Debug\net6.0\ServerProgram.dll
+D:\NetworkProgramming\WinformChat\ServerProgram\obj\Debug\net6.0\refint\ServerProgram.dll
+D:\NetworkProgramming\WinformChat\ServerProgram\obj\Debug\net6.0\ServerProgram.pdb
+D:\NetworkProgramming\WinformChat\ServerProgram\obj\Debug\net6.0\ServerProgram.genruntimeconfig.cache
+D:\NetworkProgramming\WinformChat\ServerProgram\obj\Debug\net6.0\ref\ServerProgram.dll
