@@ -32,7 +32,9 @@
             this.textBox_SendMsg = new System.Windows.Forms.TextBox();
             this.textBox_RecvMsg = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel_RecvMsg = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel_RecvMsg.SuspendLayout();
             this.SuspendLayout();
             // 
             // button_Input
@@ -58,12 +60,11 @@
             // 
             // textBox_RecvMsg
             // 
-            this.textBox_RecvMsg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox_RecvMsg.Location = new System.Drawing.Point(0, 0);
+            this.textBox_RecvMsg.Location = new System.Drawing.Point(25, 34);
             this.textBox_RecvMsg.Multiline = true;
             this.textBox_RecvMsg.Name = "textBox_RecvMsg";
             this.textBox_RecvMsg.ReadOnly = true;
-            this.textBox_RecvMsg.Size = new System.Drawing.Size(800, 350);
+            this.textBox_RecvMsg.Size = new System.Drawing.Size(299, 127);
             this.textBox_RecvMsg.TabIndex = 2;
             // 
             // panel1
@@ -76,20 +77,31 @@
             this.panel1.Size = new System.Drawing.Size(800, 100);
             this.panel1.TabIndex = 3;
             // 
+            // panel_RecvMsg
+            // 
+            this.panel_RecvMsg.Controls.Add(this.textBox_RecvMsg);
+            this.panel_RecvMsg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_RecvMsg.Location = new System.Drawing.Point(0, 0);
+            this.panel_RecvMsg.Name = "panel_RecvMsg";
+            this.panel_RecvMsg.Size = new System.Drawing.Size(800, 350);
+            this.panel_RecvMsg.TabIndex = 4;
+            // 
             // ChatForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox_RecvMsg);
+            this.Controls.Add(this.panel_RecvMsg);
             this.Controls.Add(this.panel1);
             this.Name = "ChatForm";
             this.Text = "1번 채팅";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ChatForm_FormClosed);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ChatForm_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel_RecvMsg.ResumeLayout(false);
+            this.panel_RecvMsg.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -99,6 +111,7 @@
         private System.Windows.Forms.TextBox textBox_SendMsg;
         private System.Windows.Forms.TextBox textBox_RecvMsg;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel_RecvMsg;
     }
 }
 

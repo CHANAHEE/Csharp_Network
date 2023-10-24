@@ -21,9 +21,10 @@ namespace MyApp // Note: actual namespace depends on the project name.
         private static TcpListener Listener_First;
         private static TcpListener Listener_Second;
         private static TcpClient Client;
-        private static NetworkStream Stream;
+        private static NetworkStream FirstClientStream;
+        private static NetworkStream SecondClientStream;
 
-        
+
         static void Main(string[] args)
         {
             Listener_First = new TcpListener(IPAddress.Any, 7000);
@@ -42,52 +43,51 @@ namespace MyApp // Note: actual namespace depends on the project name.
             Accept_SecondClientThread.Join();
 
             Client.Close();
-            Stream.Close();
+            FirstClientStream.Close();
+            SecondClientStream.Close();
             Console.WriteLine("Server Listencer Close");
         }
 
         public static void Accept_FirstClient()
         {
-            
-
             Console.WriteLine("첫번째 Client 연결 대기중 . . .");
             Client = Listener_First.AcceptTcpClient();
 
             Console.WriteLine("Client 연결 완료 !");
-            Stream = Client.GetStream();
+            FirstClientStream = Client.GetStream();
 
-            Receive_Client(Stream, CLIENT_TYPE.FIRST);
+            Receive_Client(CLIENT_TYPE.FIRST);
         }
 
         public static void Accept_SecondClient()
         {
-            NetworkStream Stream;
+            
 
             Console.WriteLine("두번째 Client 연결 대기중 . . .");
             Client = Listener_Second.AcceptTcpClient();
 
             Console.WriteLine("Client 연결 완료 !");
-            Stream = Client.GetStream();
+            SecondClientStream = Client.GetStream();
 
-            Receive_Client(Stream,CLIENT_TYPE.SECOND);
+            Receive_Client(CLIENT_TYPE.SECOND);
         }
 
 
-        public static void Receive_Client(NetworkStream Stream, CLIENT_TYPE ClientType)
+        public static void Receive_Client(CLIENT_TYPE ClientType)
         {
             switch(ClientType)
             {
                 case CLIENT_TYPE.FIRST:
-                    RecvMsgFromClient(Stream,CLIENT_TYPE.FIRST);
+                    RecvMsgFromClient(CLIENT_TYPE.FIRST);
                     break;
                 case CLIENT_TYPE.SECOND:
-                    RecvMsgFromClient(Stream, CLIENT_TYPE.SECOND);
+                    RecvMsgFromClient(CLIENT_TYPE.SECOND);
                     break;
             }
                      
         }
 
-        public static void RecvMsgFromClient(NetworkStream Stream, CLIENT_TYPE ClientType)
+        public static void RecvMsgFromClient(CLIENT_TYPE ClientType)
         {
             while (true)
             {
@@ -95,21 +95,34 @@ namespace MyApp // Note: actual namespace depends on the project name.
                 int Nbytes;
                 string ReceiveData = "";
 
-
-                while ((Nbytes = Stream.Read(Buff, 0, Buff.Length)) > 0)
+                if(ClientType == CLIENT_TYPE.FIRST)
                 {
-                    ReceiveData = Encoding.Unicode.GetString(Buff, 0, Nbytes);
+                    while ((Nbytes = FirstClientStream.Read(Buff, 0, Buff.Length)) > 0)
+                    {
+                        ReceiveData = Encoding.Unicode.GetString(Buff, 0, Nbytes);
 
-                    if(ClientType == CLIENT_TYPE.FIRST)
-                    {
                         Console.WriteLine("1번 클라이언트 : " + ReceiveData);
-                    }
-                    else
-                    {
-                        Console.WriteLine("2번 클라이언트 : " + ReceiveData);
+                        SendMsgToClient(SecondClientStream, Buff);
                     }
                 }
+                if(ClientType == CLIENT_TYPE.SECOND) 
+                {
+                    while ((Nbytes = SecondClientStream.Read(Buff, 0, Buff.Length)) > 0)
+                    {
+                        ReceiveData = Encoding.Unicode.GetString(Buff, 0, Nbytes);
+
+                        Console.WriteLine("2번 클라이언트 : " + ReceiveData);
+                        SendMsgToClient(FirstClientStream, Buff);
+                    }
+                }                
             }
+        }
+
+        public static void SendMsgToClient(NetworkStream Stream, byte[] Msg)
+        {
+            Stream.Write(Msg);
+
+            Stream.Flush();
         }
     }
 }
