@@ -27,7 +27,7 @@ namespace WinformChat
         public bool Init()
         {
             StartForm();
-            ConnectToServer();
+            //ConnectToServer();
             return true;
         }
 

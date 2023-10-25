@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinformChat.FormClass;
 
 namespace WinformChat
 {
@@ -35,17 +36,10 @@ namespace WinformChat
             SendMsg();
         }
 
-        private void ChatForm_KeyDown(object sender, KeyEventArgs e)
-        {
-            if(e.KeyCode == Keys.Enter)
-            {
-                SendMsg();
-            }            
-        }
 
         private void SendMsg()
         {
-            string Msg = textBox_SendMsg.Text;
+            /*string Msg = textBox_SendMsg.Text;
 
             if (Msg == "")
             {
@@ -60,7 +54,12 @@ namespace WinformChat
             // 서버로 보내는 데이터
             Stream.Write(Buff, 0, Buff.Length);
 
-            textBox_SendMsg.Clear();
+            textBox_SendMsg.Clear();*/
+
+            MessageBoxControl MsgBox = new MessageBoxControl();
+            MsgBox.Location = new Point(panel2.Width / 2 - MsgBox.Width - 10, 0);
+
+            panel2.Controls.Add(MsgBox);
         }
         
         private void RecvMsg()
@@ -69,7 +68,7 @@ namespace WinformChat
             {
                 if(Stream == null)
                 {
-                    break;
+                    continue;
                 }
 
                 byte[] Buff = new byte[1024];
@@ -80,7 +79,11 @@ namespace WinformChat
                 while ((Nbytes = Stream.Read(Buff, 0, Buff.Length)) > 0)
                 {
                     ReceiveData = Encoding.Unicode.GetString(Buff, 0, Nbytes);
-                    textBox_RecvMsg.Text = ReceiveData;
+                    BeginInvoke(new Action(() =>
+                    {
+                        // UI 작업은 여기에서 수행됩니다.
+                        textBox_RecvMsg.Text = ReceiveData;
+                    }));
                 }
             }
             
@@ -95,9 +98,17 @@ namespace WinformChat
 
         private void ChatForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            MainManager.Instance().Client.Close();
-            Stream.Close();
+            //MainManager.Instance().Client.Close();
+            //Stream.Close();
             Process.GetCurrentProcess().Kill();
+        }
+
+        private void textBox_SendMsg_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SendMsg();
+            }
         }
     }
 }

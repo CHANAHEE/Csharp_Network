@@ -41,9 +41,10 @@
             // 
             this.button_Input.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_Input.Location = new System.Drawing.Point(691, 17);
+            this.button_Input.Location = new System.Drawing.Point(605, 14);
+            this.button_Input.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_Input.Name = "button_Input";
-            this.button_Input.Size = new System.Drawing.Size(97, 71);
+            this.button_Input.Size = new System.Drawing.Size(85, 57);
             this.button_Input.TabIndex = 0;
             this.button_Input.Text = "입   력";
             this.button_Input.UseVisualStyleBackColor = true;
@@ -52,21 +53,24 @@
             // textBox_SendMsg
             // 
             this.textBox_SendMsg.Font = new System.Drawing.Font("굴림", 15F);
-            this.textBox_SendMsg.Location = new System.Drawing.Point(12, 17);
+            this.textBox_SendMsg.Location = new System.Drawing.Point(10, 14);
+            this.textBox_SendMsg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_SendMsg.Multiline = true;
             this.textBox_SendMsg.Name = "textBox_SendMsg";
-            this.textBox_SendMsg.Size = new System.Drawing.Size(673, 71);
+            this.textBox_SendMsg.Size = new System.Drawing.Size(589, 58);
             this.textBox_SendMsg.TabIndex = 1;
+            this.textBox_SendMsg.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_SendMsg_KeyDown);
             // 
             // textBox_RecvMsg
             // 
             this.textBox_RecvMsg.BackColor = System.Drawing.Color.Lavender;
             this.textBox_RecvMsg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox_RecvMsg.Location = new System.Drawing.Point(12, 12);
+            this.textBox_RecvMsg.Location = new System.Drawing.Point(10, 10);
+            this.textBox_RecvMsg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_RecvMsg.Multiline = true;
             this.textBox_RecvMsg.Name = "textBox_RecvMsg";
             this.textBox_RecvMsg.ReadOnly = true;
-            this.textBox_RecvMsg.Size = new System.Drawing.Size(264, 111);
+            this.textBox_RecvMsg.Size = new System.Drawing.Size(231, 89);
             this.textBox_RecvMsg.TabIndex = 2;
             // 
             // panel1
@@ -74,9 +78,10 @@
             this.panel1.Controls.Add(this.textBox_SendMsg);
             this.panel1.Controls.Add(this.button_Input);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 350);
+            this.panel1.Location = new System.Drawing.Point(0, 280);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 100);
+            this.panel1.Size = new System.Drawing.Size(700, 80);
             this.panel1.TabIndex = 3;
             // 
             // panel_RecvMsg
@@ -84,21 +89,22 @@
             this.panel_RecvMsg.Controls.Add(this.textBox_RecvMsg);
             this.panel_RecvMsg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_RecvMsg.Location = new System.Drawing.Point(0, 0);
+            this.panel_RecvMsg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel_RecvMsg.Name = "panel_RecvMsg";
-            this.panel_RecvMsg.Size = new System.Drawing.Size(800, 350);
+            this.panel_RecvMsg.Size = new System.Drawing.Size(700, 280);
             this.panel_RecvMsg.TabIndex = 4;
             // 
             // ChatForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(700, 360);
             this.Controls.Add(this.panel_RecvMsg);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ChatForm";
             this.Text = "2번 채팅";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ChatForm_FormClosed);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ChatForm_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel_RecvMsg.ResumeLayout(false);

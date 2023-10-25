@@ -72,6 +72,12 @@
     <Compile Include="FormClass\ChatForm.Designer.cs">
       <DependentUpon>ChatForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormClass\MessageBoxControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormClass\MessageBoxControl.Designer.cs">
+      <DependentUpon>MessageBoxControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main\Program.cs" />
     <Compile Include="Main\WinformChat_1_Main.cs" />
     <Compile Include="Manager\MainManager.cs" />
@@ -80,6 +86,9 @@
     <Compile Include="RuleDefine\ChatDefine.cs" />
     <EmbeddedResource Include="FormClass\ChatForm.resx">
       <DependentUpon>ChatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormClass\MessageBoxControl.resx">
+      <DependentUpon>MessageBoxControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

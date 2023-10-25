@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Net.Sockets;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -35,14 +36,6 @@ namespace WinformChat
         }
 
 
-        private void ChatForm_KeyDown(object sender, KeyEventArgs e)
-        {
-            if(e.KeyCode == Keys.Enter)
-            {
-                SendMsg();                
-            }
-        }
-
 
         private void RecvMsg()
         {
@@ -51,7 +44,7 @@ namespace WinformChat
             {
                 if (Stream == null)
                 {
-                    break;
+                    continue;
                 }
 
                 byte[] Buff = new byte[1024];
@@ -62,7 +55,12 @@ namespace WinformChat
                 while ((Nbytes = Stream.Read(Buff, 0, Buff.Length)) > 0)
                 {
                     ReceiveData = Encoding.Unicode.GetString(Buff, 0, Nbytes);
-                    textBox_RecvMsg.Text = ReceiveData;
+                    BeginInvoke(new Action(() =>
+                    {
+                        // UI 작업은 여기에서 수행됩니다.
+                        textBox_RecvMsg.Text = ReceiveData;
+                    }));
+                   
                 }
             }
 
@@ -101,6 +99,14 @@ namespace WinformChat
             MainManager.Instance().Client.Close();
             Stream.Close();
             Process.GetCurrentProcess().Kill();
-        }        
+        }
+
+        private void textBox_SendMsg_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SendMsg();
+            }
+        }
     }
 }
