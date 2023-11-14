@@ -9,3 +9,4 @@ D:\NetworkProgramming\WinformChat\WinformChat\obj\x64\Debug\WinformChat_1.csproj
 D:\NetworkProgramming\WinformChat\WinformChat\obj\x64\Debug\WinformChat_1.csproj.CoreCompileInputs.cache
 D:\NetworkProgramming\WinformChat\WinformChat\obj\x64\Debug\WinformChat.exe
 D:\NetworkProgramming\WinformChat\WinformChat\obj\x64\Debug\WinformChat.pdb
+D:\NetworkProgramming\WinformChat\WinformChat\obj\x64\Debug\WinformChat.FormClass.MessageBoxControl.resources

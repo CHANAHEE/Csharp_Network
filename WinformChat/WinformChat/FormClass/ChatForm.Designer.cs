@@ -30,12 +30,13 @@
         {
             this.button_Input = new System.Windows.Forms.Button();
             this.textBox_SendMsg = new System.Windows.Forms.TextBox();
-            this.textBox_RecvMsg = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel_RecvMsg = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox_RecvMsg = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel_RecvMsg.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button_Input
@@ -62,16 +63,6 @@
             this.textBox_SendMsg.TabIndex = 1;
             this.textBox_SendMsg.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_SendMsg_KeyDown);
             // 
-            // textBox_RecvMsg
-            // 
-            this.textBox_RecvMsg.Location = new System.Drawing.Point(22, 27);
-            this.textBox_RecvMsg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_RecvMsg.Multiline = true;
-            this.textBox_RecvMsg.Name = "textBox_RecvMsg";
-            this.textBox_RecvMsg.ReadOnly = true;
-            this.textBox_RecvMsg.Size = new System.Drawing.Size(262, 102);
-            this.textBox_RecvMsg.TabIndex = 2;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.textBox_SendMsg);
@@ -86,7 +77,6 @@
             // panel_RecvMsg
             // 
             this.panel_RecvMsg.Controls.Add(this.panel2);
-            this.panel_RecvMsg.Controls.Add(this.textBox_RecvMsg);
             this.panel_RecvMsg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_RecvMsg.Location = new System.Drawing.Point(0, 0);
             this.panel_RecvMsg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -96,11 +86,22 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.textBox_RecvMsg);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(700, 280);
             this.panel2.TabIndex = 3;
+            // 
+            // textBox_RecvMsg
+            // 
+            this.textBox_RecvMsg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_RecvMsg.Location = new System.Drawing.Point(0, 0);
+            this.textBox_RecvMsg.Multiline = true;
+            this.textBox_RecvMsg.Name = "textBox_RecvMsg";
+            this.textBox_RecvMsg.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox_RecvMsg.Size = new System.Drawing.Size(700, 280);
+            this.textBox_RecvMsg.TabIndex = 0;
             // 
             // ChatForm
             // 
@@ -116,7 +117,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel_RecvMsg.ResumeLayout(false);
-            this.panel_RecvMsg.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -125,10 +127,10 @@
 
         private System.Windows.Forms.Button button_Input;
         private System.Windows.Forms.TextBox textBox_SendMsg;
-        private System.Windows.Forms.TextBox textBox_RecvMsg;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel_RecvMsg;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox textBox_RecvMsg;
     }
 }
 

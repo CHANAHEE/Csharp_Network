@@ -14,6 +14,10 @@ namespace WinformChat
 
         public TcpClient Client;
 
+        public string myUserID = "";
+
+        public string opponentUserID = "";
+
         public static MainManager Instance()
         {
             if(mainMngInstance == null)
@@ -68,38 +72,14 @@ namespace WinformChat
         public void SendDataToServer()
         {
             NetworkStream Stream = null;
-/*
-            while (true)
-            {
-                Console.Write("메시지를 입력하세요( q는 종료 ) : ");
+            Stream = Client.GetStream();
 
-                string Msg = "";
+            byte[] Buff = Encoding.Unicode.GetBytes(myUserID);
 
-                if (Msg == "q")
-                {
-                    break;
-                }
+            Stream = Client.GetStream();
 
-                while (true)
-                {
-                    Msg = Console.ReadLine();
-                    if (Msg != null)
-                    {
-                        break;
-                    }
-                    Console.WriteLine("메시지를 입력해주세요.");
-                }
-
-                byte[] Buff = Encoding.Unicode.GetBytes(Msg);
-
-                Stream = Client.GetStream();
-
-                // 서버로 보내는 데이터
-                Stream.Write(Buff, 0, Buff.Length);
-            }
-
-            Stream.Close();
-            Client.Close();*/
+            // 서버로 보내는 데이터
+            Stream.Write(Buff, 0, Buff.Length);
         }
     }
 }

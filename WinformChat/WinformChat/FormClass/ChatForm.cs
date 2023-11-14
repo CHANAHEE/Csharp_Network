@@ -19,10 +19,14 @@ namespace WinformChat
     {
         NetworkStream Stream = null;
 
+        bool UserIDCheck = false;
+
         public ChatForm()
         {
             InitializeComponent();
             Init();
+
+            MainManager.Instance().myUserID = this.Text;
         }
 
         private void Init()
@@ -39,7 +43,7 @@ namespace WinformChat
 
         private void SendMsg()
         {
-            /*string Msg = textBox_SendMsg.Text;
+            string Msg = textBox_SendMsg.Text;
 
             if (Msg == "")
             {
@@ -54,12 +58,9 @@ namespace WinformChat
             // 서버로 보내는 데이터
             Stream.Write(Buff, 0, Buff.Length);
 
-            textBox_SendMsg.Clear();*/
-
-            MessageBoxControl MsgBox = new MessageBoxControl();
-            MsgBox.Location = new Point(panel2.Width / 2 - MsgBox.Width - 10, 0);
-
-            panel2.Controls.Add(MsgBox);
+            textBox_SendMsg.Clear();
+            
+            textBox_RecvMsg.Text += MainManager.Instance().myUserID + " :" + Environment.NewLine + Msg + Environment.NewLine + Environment.NewLine;
         }
         
         private void RecvMsg()
@@ -81,8 +82,15 @@ namespace WinformChat
                     ReceiveData = Encoding.Unicode.GetString(Buff, 0, Nbytes);
                     BeginInvoke(new Action(() =>
                     {
-                        // UI 작업은 여기에서 수행됩니다.
-                        textBox_RecvMsg.Text = ReceiveData;
+                        if (!UserIDCheck)
+                        {
+                            MainManager.Instance().opponentUserID = ReceiveData;
+                            UserIDCheck = true;                            
+                        }
+                        else
+                        {
+                            textBox_RecvMsg.Text = ReceiveData;
+                        }
                     }));
                 }
             }

@@ -28,55 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label_SendTime = new System.Windows.Forms.Label();
-            this.label_NickName = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
-            // label_SendTime
+            // richTextBox1
             // 
-            this.label_SendTime.AutoSize = true;
-            this.label_SendTime.Location = new System.Drawing.Point(5, 40);
-            this.label_SendTime.Name = "label_SendTime";
-            this.label_SendTime.Size = new System.Drawing.Size(38, 12);
-            this.label_SendTime.TabIndex = 1;
-            this.label_SendTime.Text = "label1";
-            // 
-            // label_NickName
-            // 
-            this.label_NickName.AutoSize = true;
-            this.label_NickName.Location = new System.Drawing.Point(111, 13);
-            this.label_NickName.Name = "label_NickName";
-            this.label_NickName.Size = new System.Drawing.Size(38, 12);
-            this.label_NickName.TabIndex = 2;
-            this.label_NickName.Text = "label2";
-            // 
-            // listView1
-            // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(194, 76);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(121, 97);
-            this.listView1.TabIndex = 3;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(204, 65);
+            this.richTextBox1.TabIndex = 4;
+            this.richTextBox1.Text = "";
             // 
             // MessageBoxControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.label_NickName);
-            this.Controls.Add(this.label_SendTime);
+            this.Controls.Add(this.richTextBox1);
             this.Name = "MessageBoxControl";
-            this.Size = new System.Drawing.Size(335, 192);
+            this.Size = new System.Drawing.Size(204, 65);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        public System.Windows.Forms.Label label_SendTime;
-        public System.Windows.Forms.Label label_NickName;
-        private System.Windows.Forms.ListView listView1;
+
+        public System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

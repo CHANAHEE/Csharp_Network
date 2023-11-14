@@ -23,7 +23,9 @@ namespace MyApp // Note: actual namespace depends on the project name.
         private static TcpClient Client;
         private static NetworkStream FirstClientStream;
         private static NetworkStream SecondClientStream;
-
+        private static int userCount = 0;
+        private static bool sharingID = false;
+        private static object idLock = new object();
 
         static void Main(string[] args)
         {
@@ -61,8 +63,6 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
         public static void Accept_SecondClient()
         {
-            
-
             Console.WriteLine("두번째 Client 연결 대기중 . . .");
             Client = Listener_Second.AcceptTcpClient();
 
@@ -102,7 +102,22 @@ namespace MyApp // Note: actual namespace depends on the project name.
                         ReceiveData = Encoding.Unicode.GetString(Buff, 0, Nbytes);
 
                         Console.WriteLine("1번 클라이언트 : " + ReceiveData);
-                        SendMsgToClient(SecondClientStream, Buff);
+
+                        lock (idLock)
+                        {
+                            userCount++;
+
+                            if (userCount == 2)
+                            {
+                                SecondClientStream.Write(Buff);
+                            }
+                            else
+                            {
+                                continue;
+                            }
+                        }
+
+                        SendMsgToClient(SecondClientStream, Buff);                        
                     }
                 }
                 if(ClientType == CLIENT_TYPE.SECOND) 
@@ -112,6 +127,21 @@ namespace MyApp // Note: actual namespace depends on the project name.
                         ReceiveData = Encoding.Unicode.GetString(Buff, 0, Nbytes);
 
                         Console.WriteLine("2번 클라이언트 : " + ReceiveData);
+
+                        lock (idLock)
+                        {
+                            userCount++;
+
+                            if (userCount == 2)
+                            {
+                                FirstClientStream.Write(Buff);
+                            }
+                            else
+                            {
+                                continue;
+                            }
+                        }
+
                         SendMsgToClient(FirstClientStream, Buff);
                     }
                 }                
